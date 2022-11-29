@@ -3,4 +3,3 @@ i = 97
 while(i >= 97 and i <= 122):
     print(F"{i:c}", end="")
     i += 1
-
