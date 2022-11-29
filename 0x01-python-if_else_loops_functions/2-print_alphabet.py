@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-i = 97
-while(i >= 97 and i <= 122):
+for i in range(97, 123):
     print(F"{i:c}", end="")
-    i += 1
+
