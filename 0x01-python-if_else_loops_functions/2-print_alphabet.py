@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-for a in range(ord('a'), ord('z') + 1):
-    print("{:c}".format(a), end='')
+i = 97
+while(i >= 97 and i <= 122):
+    print(F"{i:c}", end="")
+    i += 1
+
