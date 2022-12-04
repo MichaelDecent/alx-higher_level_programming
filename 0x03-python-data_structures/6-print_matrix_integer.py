@@ -7,6 +7,3 @@ def print_matrix_integer(matrix=[[]]):
                 print("{}".format(row[i - 1]))
                 break
             print("{}".format(row[i - 1]), end=" ")
-    print()
-
-
