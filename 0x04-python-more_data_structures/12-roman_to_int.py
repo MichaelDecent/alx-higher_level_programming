@@ -1,6 +1,8 @@
 #!/usr/usr/python3
 
 def roman_to_int(roman_string):
+    if roman_string != "" or None:
+        return 0
 
     result = 0
     roman_dict = dict(M=1000, D=500, L=50, V=5, C=100, X=10, I=1)
