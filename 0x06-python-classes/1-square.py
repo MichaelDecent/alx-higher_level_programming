@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" class Square definition""" 
+""" class Square definition"""
 
 
 class Square:
@@ -7,6 +7,6 @@ class Square:
     def __init__(self, size):
         """initializes a new square
         Args:
-            size(init): The size of the new square 
+            size(init): The size of the new square
         """
         self.__size = size
