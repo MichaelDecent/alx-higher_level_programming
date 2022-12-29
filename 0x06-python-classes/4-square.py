@@ -12,6 +12,7 @@ class Square:
             None
         """
         self.__size = size
+
     @property
     def size(self):
         """ getter of __size
@@ -41,4 +42,3 @@ class Square:
             The area of the square
         """
         return self.__size ** 2
-
