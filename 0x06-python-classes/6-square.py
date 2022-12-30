@@ -4,6 +4,7 @@
 
 class Square:
     """ Represents a square """
+
     def __init__(self, size=0, position=(0, 0)):
         
         """ initializes the square
@@ -13,8 +14,8 @@ class Square:
         Returns:
             None
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -22,7 +23,7 @@ class Square:
         Returns:
             the size of the square
         """
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -78,8 +79,8 @@ class Square:
             print("")
 
         else:
-            [print("") for i in range (0, self.__position[1])]
-            for j in range (0, self.__size):
-                [print("", end="") for k in range(0, self.__position[0])]
+            [print("") for i in range(0, self.__position[1])]
+            for j in range(0, self.__size):
+                [print(" ", end="") for k in range(0, self.__position[0])]
                 [print('#', end="") for l in range(0, self.__size)]
                 print("")
