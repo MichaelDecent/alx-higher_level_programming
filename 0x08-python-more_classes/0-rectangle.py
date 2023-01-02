@@ -3,5 +3,5 @@
 
 
 class Rectangle:
+    """ represents a Rectangle"""
     pass
-
