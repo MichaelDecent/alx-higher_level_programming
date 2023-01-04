@@ -15,7 +15,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-
     @property
     def width(self):
         """ width of the Rectangle
@@ -92,7 +91,7 @@ class Rectangle:
     def __repr__(self):
         """  return a string representation of the rectangle """
         return (f"Rectangle({self.__width}, {self.__height})")
-        
+
     def __del__(self):
         """ deletes an instance of the rectangle """
-        print ("Bye rectangle...")
+        print("Bye rectangle...")
