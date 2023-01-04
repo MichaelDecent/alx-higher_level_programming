@@ -76,13 +76,13 @@ class Rectangle:
         else:
             return (2 * (self.__width + self.__height))
 
-    def __str__(self) -> str:
+    def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
         for h in range(self.__height):
             for w in range(self.__width):
                 rectangle += "#"
-            if h < self.__height:
+            if h < self.__height - 1:
                 rectangle += "\n"
         return rectangle
