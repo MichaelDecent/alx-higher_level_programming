@@ -1,0 +1,53 @@
+SA test document for the 0-add_integer
+======================================
+
+case 0: importing
+	>>> add_integer = __import__('0-add_integer').add_integer
+	
+------------------------------------------------------
+case 1: Addition of two numbers
+	>>> add_integer(1, 2)
+	3
+
+------------------------------------------------------
+case 2: Addition of one positive and one negtive numbers 
+	>>> add_integer(100, -2)
+	98
+
+------------------------------------------------------
+case 3: Addition of a float and an integer
+	>>> add_integer(100.3, -2)
+	98
+
+------------------------------------------------------
+case 4: Additon of non integer or float and an integer
+	>>> add_integer("School", 4)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+-------------------------------------------------------
+case 5: Additon of an integer and non integer or float
+        >>> add_integer(4, "School")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+-------------------------------------------------------
+case 6: Addition of one argument with the default
+	>>> add_integer(2)
+	100
+
+-------------------------------------------------------
+case 7: No argument given
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+.......................................................
+case 8: Overflow
+	>>> add_integer(10e1000**2, 1)
+	Traceback (most recent call last):
+	...
+     	OverflowError: cannot convert float infinity to integer
