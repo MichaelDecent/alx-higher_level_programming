@@ -12,6 +12,9 @@ int check_cycle(listint_t *list)
 	listint_t *head;
 	int i;
 
+	if (list == NULL)
+		return (0);
+
 	head = list;
 	for (i = 0; list->next != NULL; i++)
 	{
