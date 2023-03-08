@@ -4,6 +4,7 @@ def fizzbuzz():
         for n in range(1, i):
             if (i == (n * 15)):
                 print('FizzBuzz', end=' ')
+                break
             elif (i == (n * 3)):
                 print('Fizz', end=' ')
                 break
