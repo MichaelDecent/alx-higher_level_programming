@@ -10,8 +10,8 @@ class Square:
         Args:
             size(int): the size of the square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -64,9 +64,8 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            if self.__position[1] > 0:
-                for p1 in range(self.__position[1]):
-                    print()
+            for p1 in range(self.__position[1]):
+                print() 
             for row in range(self.__size):
                 p0 = 0
                 for s in range(self.__size + self.position[0]):
