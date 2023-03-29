@@ -11,4 +11,3 @@ class Square:
             size(int): the size of the square
         """
         self.__size = size
-
