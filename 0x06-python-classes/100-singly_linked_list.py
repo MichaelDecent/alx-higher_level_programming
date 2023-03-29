@@ -23,24 +23,13 @@ class Node:
         Args:
             value(int): the value used to set the data to
         """
-<<<<<<< HEAD
-        if type(value) is not int:
-=======
         if (not isinstance(value, int)):
->>>>>>> 87a707fefcc2640ab6a4ab19f15864ea5b0323d3
             raise TypeError('data must be an integer')
         else:
             self._data = value
 
     @property
     def next_node(self):
-<<<<<<< HEAD
-        """It Retrieves the number
-
-
-
-
-=======
         """It Retrieves the next_node
             Returns: the next_node
         """
@@ -90,4 +79,3 @@ class SinglyLinkedList:
         if temp.next_node:
             new_node.next_node = temp.next_node
         temp.next_node = new_node
->>>>>>> 87a707fefcc2640ab6a4ab19f15864ea5b0323d3
