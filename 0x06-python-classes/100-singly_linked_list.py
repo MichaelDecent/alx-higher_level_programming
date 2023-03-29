@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ class Node: defines a node of a singly linked list by """
+
+
 class Node:
     """ this is where the node of a linked list is defined """
     def __init__(self, data, next_node=None):
@@ -17,6 +19,7 @@ class Node:
             Returns: the data
         """
         return (self._data)
+
     @data.setter
     def data(self, value):
         """ sets the data of the list
@@ -45,12 +48,13 @@ class Node:
             raise TypeError('next_node must be a Node object')
         self.__next_node = node
 
+
 class SinglyLinkedList:
     """  defines a singly linked list """
     def __init__(self):
         """ Initialization """
         self.head = None
-    
+
     def __str__(self):
         """ Printing the list """
         slist = ""
@@ -61,7 +65,8 @@ class SinglyLinkedList:
         return slist[:-1]
 
     def sorted_insert(self, value):
-        """Inserts a new Node into the correct sorted position in the list (increasing order)
+        """Inserts a new Node into the correct sorted
+        position in the list (increasing order)
             Args:
                 value: what the value will be on the node
         """
