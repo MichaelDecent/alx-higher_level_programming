@@ -76,17 +76,16 @@ class Square:
         sq_str = ""
         if self.__size == 0:
             return '\n'
-        else:
-            for p1 in range(self.__position[1]):
-                sq_str += '\n'
-            for row in range(self.__size):
-                p2 = 0
-                for s in range(self.__size + self.__position[0]):
-                    if p2 < self.__position[0]:
-                        sq_str += ' '
-                        p2 += 1
-                        continue
-                    sq_str += '#'
-                sq_str += '\n'
+        for p1 in range(self.__position[1]):
+            sq_str += '\n'
+        for row in range(self.__size):
+            p2 = 0
+            for s in range(self.__size + self.__position[0]):
+                if p2 < self.__position[0]:
+                    sq_str += ' '
+                    p2 += 1
+                    continue
+                sq_str += '#'
+            sq_str += '\n'
 
         return (sq_str[:-1])
