@@ -75,7 +75,8 @@ class Square:
         """ prints the square """
         sq_str = ""
         if self.__size == 0:
-            return '\n'
+            sq_str = '\n'
+            return (sq_str[:-1])
         for p1 in range(self.__position[1]):
             sq_str += '\n'
         for row in range(self.__size):
@@ -87,5 +88,4 @@ class Square:
                     continue
                 sq_str += '#'
             sq_str += '\n'
-
         return (sq_str[:-1])
