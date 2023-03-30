@@ -5,7 +5,7 @@
 class Square:
     """ definition of a square """
     def __init__(self, size=0, position=(0, 0)):
-        """ Initialization 
+        """ Initialization
             Args:
                 size(int): size of the square
                 position(Tuple): it defines the position of the square
@@ -15,8 +15,8 @@ class Square:
 
     @property
     def size(self):
-       """ A getter for size of the square """
-       return (self.__size)
+        """ A getter for size of the square """
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -42,31 +42,30 @@ class Square:
             Args:
                 value(tuple): it define the position of the square
         """
-        if (not isinstance(value, tuple) or len(value) != 2 or \
-            not isinstance(value[0], int) or not isinstance(value[1], int)\
-            or value[0] < 0 or value[1] < 0):
+        if not isinstance(value, tuple) or len(value) != 2 or \
+           not isinstance(value[0], int) or not isinstance(value[1], int) \
+           or value[0] < 0 or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integer')
         else:
             self.__position = value
 
-
     def area(self):
-        """ Area of the square 
+        """ Area of the square
             Returns: the area of the square
         """
         return (self.__size ** 2)
-    
+
     def my_print(self):
         """ that prints in stdout the square with the character # """
         if self.__size == 0:
-            print ()
+            print()
         else:
             for p1 in range(self.__position[1]):
                 print()
             for row in range(self.__size):
                 p2 = 0
                 for s in range(self.__size + self.__position[0]):
-                    if  p2 < self.__position[0]:
+                    if p2 < self.__position[0]:
                         print(' ', end='')
                         p2 += 1
                     print('#', end='')
@@ -79,11 +78,11 @@ class Square:
             return
         else:
             for p1 in range(self.__position[1]):
-                sq_str += '\n' 
+                sq_str += '\n'
             for row in range(self.__size):
                 p2 = 0
                 for s in range(self.__size + self.__position[0]):
-                    if  p2 < self.__position[0]:
+                    if p2 < self.__position[0]:
                         sq_str += ' '
                         p2 += 1
                         continue
@@ -91,6 +90,3 @@ class Square:
                 sq_str += '\n'
 
         return (sq_str[:-1])
-
-
-
