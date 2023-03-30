@@ -89,4 +89,4 @@ class Square:
                     sq_str += '#'
                 sq_str += '\n'
 
-        return (sq_str)
+        return (sq_str[:-1])
