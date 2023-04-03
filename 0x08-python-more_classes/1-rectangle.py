@@ -4,9 +4,9 @@
 
 class Rectangle:
     """ Defines a rectangle """
-    
+
     def __init__(self, width=0, height=0):
-        """ Initialization 
+        """ Initialization
             Args:
                 width(int): width of the rectangle
                 height(int): the height of the rectangle
@@ -21,7 +21,7 @@ class Rectangle:
 
     @width.setter
     def width(self, w_value):
-        """ setter fot the width of the rectangle 
+        """ setter fot the width of the rectangle
             Args:
                 w_value(int): the new value of width of the rectangle
         """
@@ -39,7 +39,7 @@ class Rectangle:
 
     @height.setter
     def height(self, h_value):
-        """ setter for the height of the rectangle 
+        """ setter for the height of the rectangle
             Args:
                 h_value(int): the value of new height of the rectangle
         """
