@@ -113,5 +113,4 @@ class Rectangle:
                 width(int): width of the rectangle
             Return: a new Rectangle instance with width == height == size
         """
-        cls.height = cls.width = size
-        return (cls(cls.height, cls.width))
+        return (cls(size, size))
