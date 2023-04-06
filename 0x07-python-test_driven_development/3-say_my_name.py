@@ -3,7 +3,7 @@
 
 
 def say_my_name(first_name, last_name=""):
-    """ a function that prints My name 
+    """ a function that prints My name
         Args:
             first_name(string): the first name
             last_name(string): the last name
@@ -14,4 +14,3 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("last_name must be a string")
     else:
         print(f"My name is {first_name} {last_name}")
-

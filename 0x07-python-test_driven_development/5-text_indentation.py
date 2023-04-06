@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import re
 
 def text_indentation(text):
     """ function that prints a text with 2 new lines\
@@ -17,6 +16,3 @@ def text_indentation(text):
         for i in range(len(text_string)):
             text_string[i] = text_string[i].strip()
         print("\n".join(text_string), end="")
-
-            
-        
