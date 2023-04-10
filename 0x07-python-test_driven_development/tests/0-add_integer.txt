@@ -58,3 +58,10 @@ case 9: Adding (None)
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
+
+______________________________________________________________________
+case 10: Adding float(NaN)
+     >>> add_integer(float('nan'), 2)
+     Traceback (most recent call last):
+     ...
+     ValueError: cannot convert float NaN to integer

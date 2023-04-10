@@ -13,8 +13,8 @@ def matrix_divided(matrix, div):
     if all([type(row) == list for row in matrix]) is False:
         raise TypeError("matrix must be a matrix\
                 (list of lists) of integers/floats")
-    if all([all([(type(col) == int or type(col) == float) for col in row])\
-     for row in matrix]) is False:
+    if all([all([(type(col) == int or type(col) == float)
+            for col in row]) for row in matrix]) is False:
         raise TypeError("matrix must be a matrix\
                 (list of lists) of integers/floats")
     if all([len(matrix[0]) == len(row) for row in matrix]) is False:
