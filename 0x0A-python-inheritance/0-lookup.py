@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This Module returns the list of available 
+""" This Module returns the list of available
     attributes and methods of an object
 """
 
