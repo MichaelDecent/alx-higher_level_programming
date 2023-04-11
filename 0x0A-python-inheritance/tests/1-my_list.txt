@@ -1,0 +1,42 @@
+=================== Test Cases for MyList Module =====================
+
+Case 0: importing the function
+
+	>>> MyList = __import__('1-my_list').MyList
+
+_________________________________________________________
+Case 1: creating an instance of the class
+
+	>>> my_list = MyList()
+
+_________________________________________________________
+Case 2: Appending integers and printing the list
+
+	>>> my_list.append(100)
+	>>> my_list.append(50)
+	>>> my_list.append(10)
+	>>> my_list.append(500)
+	>>> my_list.append(15)
+	>>> print(my_list)
+	[100, 50, 10, 500, 15]
+
+_________________________________________________________
+Case 3: Printing a sorted list
+
+	>>> my_list.print_sorted()
+	[10, 15, 50, 100, 500]
+
+_________________________________________________________
+Case 4: passing an Empty List as an argument to the class
+
+	>>> my_list = MyList([])
+	>>> my_list.print_sorted()
+	[]
+
+_________________________________________________________
+Case 5: Using a Non defined object
+
+	>>> list2.print_sorted()
+	Traceback (most recent call last):
+  	...
+	NameError: name 'list2' is not defined
