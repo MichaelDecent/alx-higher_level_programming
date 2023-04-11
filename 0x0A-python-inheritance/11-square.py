@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ This Module inherits from class Rectangle """
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -12,7 +11,3 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
-
-    def __str__(self):
-        """ return, the square description: [Square] <width>/<height> """
-        return (f"[Square] {self.__size}/{self.__size}")
