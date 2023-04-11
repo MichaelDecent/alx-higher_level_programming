@@ -84,9 +84,9 @@ case 9: negative numbers
 _________________________________________________________
 case 5: unique number
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.print_sorted()
-[1]
->>> print(my_list)
-[1]
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.print_sorted()
+	[1]
+	>>> print(my_list)
+	[1]
