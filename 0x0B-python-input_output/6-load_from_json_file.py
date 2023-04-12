@@ -3,7 +3,7 @@
 import json
 
 
-def save_to_json_file(my_obj, filename):
+def load_from_json_file(filename):
     """  a function that creates an Object from a “JSON file”
         Args:
             my_obj(str): the object to be deserilized
