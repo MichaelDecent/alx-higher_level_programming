@@ -9,6 +9,6 @@ def from_json_string(my_str):
             my_str(str): The string to be desterilized
         Return: an object (Python data structure) represented by a JSON string
     """
-    return (json.loads(my_str))
+    return (json.load(my_str))
 
 
