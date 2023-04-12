@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This Module defines a function that writes an 
+""" This Module defines a function that writes an
     Object to a text file, using a JSON representation
 """
 import json
