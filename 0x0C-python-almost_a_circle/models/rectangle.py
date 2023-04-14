@@ -99,23 +99,21 @@ class Rectangle(Base):
 
     def update(self, *args):
         """ updates the values of the argument """
-        if len(args) == 1:
-            self.id = args[0]
-        if len(args) == 2:
-            self.id = args[0]
-            self.width = args[1]
-        if len(args) == 3:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-        if len(args) == 4:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-        if len(args) == 5:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
+        if args and len(args) != 0:
+            count = 0
+            for arg in args:
+                if count == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif count == 1:
+                    self.width = arg
+                elif count == 2:
+                    self.height = arg
+                elif count == 3:
+                    self.x = arg
+                elif count == 4:
+                    self.y = arg
+                count += 1
+
