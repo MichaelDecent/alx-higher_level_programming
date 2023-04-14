@@ -10,6 +10,6 @@ def append_after(filename="", search_string="", new_string=""):
         new_string = the new string
     """
     with open(filename, 'a+') as fp:
-        for line in fp:
+        for line in fp.readlines():
             if search_string in line:
                 fp.write(new_text)
