@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m"Solution to Task 12" && git push 
+git add . && git commit -m"Solution to Task 100" && git push 
