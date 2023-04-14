@@ -97,7 +97,7 @@ class Rectangle(Base):
         """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ updates the values of the argument """
         if args and len(args) != 0:
             count = 0
@@ -116,4 +116,19 @@ class Rectangle(Base):
                 elif count == 4:
                     self.y = arg
                 count += 1
+        
+        elif kwargs and len(kwargs):
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
