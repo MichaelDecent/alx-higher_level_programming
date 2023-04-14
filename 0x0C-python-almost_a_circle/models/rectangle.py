@@ -9,10 +9,10 @@ class Rectangle(Base):
     """ defines a rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ initialization """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     #getter and setter function for width
@@ -24,6 +24,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, new_width):
         """ width setter """
+        if type(new_width) != int:
+            raise TypeError("width must be an integer")
+        if new_width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = new_width
 
     #getter and setter function for height
@@ -35,6 +39,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, new_height):
         """ height settter """
+        if type(new_height) != int:
+            raise TypeError("height must be an integer")
+        if new_height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = new_height
     
     #getter and setter function for x
@@ -45,7 +53,11 @@ class Rectangle(Base):
     
     @x.setter
     def x(self, new_x):
-        """ x stter """
+        """ height setter """
+        if type(new_x) != int:
+            raise TypeError("x must be an integer")
+        if new_x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = new_x
 
     #getter and setter function for y
@@ -56,5 +68,54 @@ class Rectangle(Base):
     
     @y.setter
     def y(self, new_y):
-        """ y setter """
+        """ y setter """   
+        if type(new_y) != int:
+            raise TypeError("y must be an integer")
+        if new_y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = new_y
+
+    def area(self):
+        """ calculates the area of the rectangle """
+        return (self.height * self.width)
+
+    def display(self):
+        """ prints in stdout the Rectangle instance with the character # """
+        for y in range(self.y):
+            print()
+        for row in range(self.height):
+            x = 0
+            for col in range(self.width):
+                while (x < self.x):
+                    print(' ', end='')
+                    x += 1
+                else:
+                    print('#', end='')
+            print()
+
+    def __str__(self):
+        """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+
+    def update(self, *args):
+        """ updates the values of the argument """
+        if len(args) == 1:
+            self.id = args[0]
+        if len(args) == 2:
+            self.id = args[0]
+            self.width = args[1]
+        if len(args) == 3:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+        if len(args) == 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        if len(args) == 5:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
