@@ -12,5 +12,4 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'a+') as fp:
         for line in fp:
             if search_string in line:
-                fp.write('\n')
                 fp.write(new_text)
