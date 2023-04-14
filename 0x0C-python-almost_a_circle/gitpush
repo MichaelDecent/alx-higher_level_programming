@@ -1,0 +1,2 @@
+#!/bin/bash
+git add . && git commit -m"Solution to Task 1" && git push 
