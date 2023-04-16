@@ -100,22 +100,19 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ updates the values of the argument """
         if args and len(args) != 0:
-            count = 0
-            for arg in args:
-                if count == 0:
-                    if arg is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
-                    else:
-                        self.id = arg
-                elif count == 1:
-                    self.width = arg
-                elif count == 2:
-                    self.height = arg
-                elif count == 3:
-                    self.x = arg
-                elif count == 4:
-                    self.y = arg
-                count += 1
+            if len(args) >= 1:
+                if arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = arg
+            if len(args) > 1:
+                self.width = arg
+            if len(args) > 2:
+                self.height = arg
+            if len(args) > 3:
+                self.x = arg
+            if len(args) > 4:
+                self.y = arg
         
         elif kwargs and len(kwargs):
             for key, value in kwargs.items():
@@ -132,3 +129,7 @@ class Rectangle(Base):
                 elif key == "y":
                     self.y = value
 
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle """
+        rect_dict = {'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y, 'id': self.id}
+        return (rect_dict)
