@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from models.base import Base
-""" A Module that defines a class Retangle 
+""" A Module that defines a class Retangle
     that inherits from super class Base
 """
 
@@ -15,7 +15,7 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    #getter and setter function for width
+    # getter and setter function for width
     @property
     def width(self):
         """ width setter """
@@ -30,7 +30,7 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = new_width
 
-    #getter and setter function for height
+    # getter and setter function for height
     @property
     def height(self):
         """ height getter """
@@ -44,13 +44,13 @@ class Rectangle(Base):
         if new_height <= 0:
             raise ValueError("height must be > 0")
         self.__height = new_height
-    
-    #getter and setter function for x
+
+    # getter and setter function for x
     @property
     def x(self):
         """ x getter """
         return (self.__x)
-    
+
     @x.setter
     def x(self, new_x):
         """ height setter """
@@ -60,15 +60,15 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = new_x
 
-    #getter and setter function for y
+    # getter and setter function for y
     @property
     def y(self):
         """ y getter """
         return (self.__y)
-    
+
     @y.setter
     def y(self, new_y):
-        """ y setter """   
+        """ y setter """
         if type(new_y) != int:
             raise TypeError("y must be an integer")
         if new_y < 0:
@@ -95,30 +95,32 @@ class Rectangle(Base):
 
     def __str__(self):
         """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+- {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """ updates the values of the argument """
         if args and len(args) != 0:
-            if len(args) >= 1:
-                if arg is None:
-                    self.__init__(self.width, self.height, self.x, self.y)
-                else:
-                    self.id = arg
-            if len(args) > 1:
-                self.width = arg
-            if len(args) > 2:
-                self.height = arg
-            if len(args) > 3:
-                self.x = arg
-            if len(args) > 4:
-                self.y = arg
-        
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
+
         elif kwargs and len(kwargs):
             for key, value in kwargs.items():
                 if key == "id":
-                    if value is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
                     self.id = value
                 elif key == "width":
                     self.width = value
@@ -131,5 +133,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ returns the dictionary representation of a Rectangle """
-        rect_dict = {'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y, 'id': self.id}
+        rect_dict = {
+                'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y, 'id': self.id}
         return (rect_dict)
