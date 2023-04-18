@@ -116,7 +116,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(isinstance(my_type, dict))
 
     def test_obj_to_str(self):
-        """Test object conversion to strig"""
+        """Test object conversion to string"""
 
         a = str(self.r_dict)
         strng = "[Rectangle] (6) 4/5 - 2/3"
@@ -144,7 +144,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r_dict.area(), 6)
 
     def test_update(self):
-        """Test for updated attributes"""
+        """Test for *args"""
         self.r_dict.update(3)
         self.assertEqual(str(self.r_dict), "[Rectangle] (3) 4/5 - 2/3")
         self.r_dict.update(3, 9)
@@ -156,7 +156,7 @@ class TestRectangle(unittest.TestCase):
         self.r_dict.update(3, 9, 8, 11, 1)
         self.assertEqual(str(self.r_dict), "[Rectangle] (3) 11/1 - 9/8")
 
-        """Test for *kwargs"""
+        """Test for **kwargs"""
         self.r_dict.update(height=33, width=209, id=10)
         self.assertEqual(str(self.r_dict), "[Rectangle] (10) 11/1 - 209/33")
         self.r_dict.update(x=303, y=400)
