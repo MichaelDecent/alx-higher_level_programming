@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-from models.base import Base
-""" A Module that defines a class Retangle
-    that inherits from super class Base
+""" A Module that defines a class Retangle that inherits from super class Base
 """
+from models.base import Base
 
 
 class Rectangle(Base):
