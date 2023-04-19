@@ -48,6 +48,18 @@ class TestPep8(unittest.TestCase):
         """ passing a valid id """
         self.assertEqual(Base(100).id, 100)
 
+    def test_over_attr(self):
+        """Test for too many arguments passed"""
+        with self.assertRaises(TypeError):
+            Base(1, 2)
+            Base(1, 2, 3, 4)
+
+    def test_private_attr(self):
+        """Test private attribute"""
+        with self.assertRaises(AttributeError):
+            Base(10).__nb_objects
+            Base(11).nb_objects
+
     def test_to_json_string(self):
         """ a list of dictionaries """
         obj = Rectangle(2, 3, 4, 5)
