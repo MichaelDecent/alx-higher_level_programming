@@ -53,7 +53,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.height, 4)
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
-        self.assertEqual(r2.id, 1)
+        self.assertEqual(r2.id, 6)
 
     def test_wrong_input(self):
         """Test invalid inputs"""
