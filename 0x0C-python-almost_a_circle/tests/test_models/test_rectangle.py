@@ -2,14 +2,15 @@
 
 """
 This module contains test cases based on Rectangle class
+
 The tests can be run using these commands:
     python3 -m unittest discover tests
     python3 -m unittest tests/test_models/test_rectangle.py
+
 Below are several test cases on the class
 """
 
 import unittest
-import os
 import pep8
 from io import StringIO
 from models import rectangle
@@ -47,13 +48,13 @@ class TestRectangle(unittest.TestCase):
 
     def test_default_val(self):
         """Test default values"""
-        r2 = Rectangle(5, 4)
+        r2 = Rectangle(5, 4, 0, 0, 1)
 
         self.assertEqual(r2.width, 5)
         self.assertEqual(r2.height, 4)
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
-        self.assertEqual(r2.id, 6)
+        self.assertEqual(r2.id, 1)
 
     def test_wrong_input(self):
         """Test invalid inputs"""
@@ -65,6 +66,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle(-18, 4, 5, 3)
             Rectangle(0, 5, 6, 3)
+            Rectangle(0, 2)
 
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(9, "4")
@@ -73,6 +75,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(2, -4, 5, 6, 3)
             Rectangle(6, 0, 6, 3)
+            Rectangle(1, 0)
 
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(3, 4, (3, 4))
@@ -116,7 +119,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(isinstance(my_type, dict))
 
     def test_obj_to_str(self):
-        """Test object conversion to string"""
+        """Test object conversion to strig"""
 
         a = str(self.r_dict)
         strng = "[Rectangle] (6) 4/5 - 2/3"
@@ -139,12 +142,26 @@ class TestRectangle(unittest.TestCase):
             output_2 = buff.getvalue()
         self.assertEqual(output_2, check2)
 
+        check3 = "##\n##\n"
+        r5 = Rectangle(2, 2)
+        with StringIO() as buff, redirect_stdout(buff):
+            r5.display()
+            output_3 = buff.getvalue()
+        self.assertEqual(output_3, check3)
+
+        check4 = "  ##\n  ##\n"
+        r6 = Rectangle(2, 2, 2)
+        with StringIO() as buff, redirect_stdout(buff):
+            r6.display()
+            output_4 = buff.getvalue()
+        self.assertEqual(output_4, check4)
+
     def test_area(self):
         """Check if area is correct"""
         self.assertEqual(self.r_dict.area(), 6)
 
     def test_update(self):
-        """Test for *args"""
+        """Test for updated attributes"""
         self.r_dict.update(3)
         self.assertEqual(str(self.r_dict), "[Rectangle] (3) 4/5 - 2/3")
         self.r_dict.update(3, 9)
@@ -160,5 +177,4 @@ class TestRectangle(unittest.TestCase):
         self.r_dict.update(height=33, width=209, id=10)
         self.assertEqual(str(self.r_dict), "[Rectangle] (10) 11/1 - 209/33")
         self.r_dict.update(x=303, y=400)
-        self.assertEqual(
-                str(self.r_dict), "[Rectangle] (10) 303/400 - 209/33")
+        self.assertEqual(str(self.r_dict), "[Rectangle] (10) 303/400 - 209/33")
