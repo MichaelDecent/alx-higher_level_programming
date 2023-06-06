@@ -4,4 +4,4 @@
 
 class LockedClass:
     """ allows the access to only one attribute """
-    __slot__ = ["first_name"]
+    __slots__ = ["first_name"]
