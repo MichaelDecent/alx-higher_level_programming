@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-""" This Module contains a function
+""" 
+    This Module contains a function
     that adds two integers
+    and returns an integer
 """
 
 
