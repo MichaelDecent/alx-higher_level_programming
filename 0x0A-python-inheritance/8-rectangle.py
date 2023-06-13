@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A Module that contains a Base class BaseGeometry  subclass Rectangle"""
+""" A Module that contains a Base class BaseGeometry subclass Rectangle"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
