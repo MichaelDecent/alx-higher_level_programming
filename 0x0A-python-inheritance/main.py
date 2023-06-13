@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('5-base_geometry').BaseGeometry
+Square = __import__('10-square').Square
 
-bg = BaseGeometry()
+s = Square(13)
 
-print(bg)
-print(dir(bg))
-print(dir(BaseGeometry))
+print(s)
+print(s.area())
 
