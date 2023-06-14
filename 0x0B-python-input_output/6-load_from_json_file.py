@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """ This Module contains a function that creates an Object from a 'JSON file'"""
 import json
 
