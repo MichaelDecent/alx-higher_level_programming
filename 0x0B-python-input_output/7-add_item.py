@@ -13,6 +13,6 @@ try:
     arguments = load_from_json_file(filename)
 except FileNotFoundError:
     arguments = []
-    
+
 arguments.extend(argv[1:])
 save_to_json_file(arguments, filename)
