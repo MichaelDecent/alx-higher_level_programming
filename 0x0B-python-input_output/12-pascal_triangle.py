@@ -10,16 +10,16 @@ def pascal_triangle(n):
         Args:
             n(int): size of the pascal triangle
     """
+    triangle = []
     if n <= 0:
-        return []
+        return triangle
 
-    final = []
     for i in range(n):
-        triangle = []
+        row = []
         for j in range(i + 1):
             if j > 0 and j < i:
-                triangle.append(final[i - 1][j] + final[i - 1][j - 1])
+                row.append(triangle[i - 1][j] + triangle[i - 1][j - 1])
             else:
-                triangle.append(1)
-        final.append(triangle)
-    return final
+                row.append(1)
+        triangle.append(row)
+    return triangle
