@@ -85,9 +85,9 @@ class Base:
                 csv.write("[]")
             else:
                 if cls.__name__ == "Rectangle"
-                    filename = ['id', 'width', 'height', 'x', 'y']
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
                 elif cls.__name__ == "Square"
-                    filename = ['id', 'size', 'x', 'y']
-                writer = csv.DictWriter(csv_file)
+                    fieldnames = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 for obj in list_objs:
                     writer.writerow(obj)
