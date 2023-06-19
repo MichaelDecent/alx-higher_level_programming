@@ -50,9 +50,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """  returns an instance with all attributes already set """
-        if cls.__name__ is 'Rectangle':
+        if cls.__name__ == 'Rectangle':
             dummy_inst = cls(1, 1)
-        elif cls.__name__ is 'Square':
+        elif cls.__name__ == 'Square':
             dummy_inst = cls(1)
 
         dummy_inst.update(**dictionary)
@@ -84,10 +84,29 @@ class Base:
             if list_objs is None or len(list_objs) == 0:
                 csv.write("[]")
             else:
-                if cls.__name__ == "Rectangle"
+                if cls.__name__ == "Rectangle":
                     fieldnames = ['id', 'width', 'height', 'x', 'y']
-                elif cls.__name__ == "Square"
+                elif cls.__name__ == "Square":
                     fieldnames = ['id', 'size', 'x', 'y']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 for obj in list_objs:
-                    writer.writerow(obj)
+                    writer.writerow(obj.to_dictionary())
+    @classmethod
+    def load_from_file_csv(cls):
+        """Serializes list_objs and saves to file"""
+
+        file_name = f"{cls.__name__}.csv"
+        list_inst = []
+        try: 
+            with open(file_name, 'r') as csv_file:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csv_file, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items()) for d in list_dicts]
+        except FileNotFoundError:
+            return []
+        for dic in list_dicts:
+            list_inst.append(cls.create(**dic))
+        return list_inst
