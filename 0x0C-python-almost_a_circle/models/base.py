@@ -113,7 +113,7 @@ class Base:
             list_inst.append(cls.create(**dic))
         return list_inst
 
-     @staticmethod
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module.
         Args:
