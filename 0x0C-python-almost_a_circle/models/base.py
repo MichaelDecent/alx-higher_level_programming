@@ -68,7 +68,7 @@ class Base:
             with open(file_name) as f:
                 file_str = f.read()
         except FileNotFoundError:
-                return []
+            return []
 
         list_dict = cls.from_json_string(file_str)
         for dic in list_dict:
