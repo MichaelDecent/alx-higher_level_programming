@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
 if (process.argv[2]) {
-  for (let i = 2; process.argv[i]; i++) { console.log(process.argv[i]); }
+  console.log(process.argv[2]);
 } else { console.log('No argument'); }
