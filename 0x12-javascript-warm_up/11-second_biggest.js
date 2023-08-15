@@ -2,7 +2,7 @@
 const myArr = process.argv.slice(2);
 
 function secondBiggest (array) {
-  if (!myArr || myArr.length === 1) {
+  if (myArr.length <= 1) {
     return 0;
   } else {
     myArr.sort((a, b) => a - b);
