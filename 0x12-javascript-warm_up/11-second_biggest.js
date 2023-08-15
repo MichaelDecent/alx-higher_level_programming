@@ -2,14 +2,21 @@
 const myArr = process.argv.slice(2);
 
 function secondBiggest (array) {
-  let ans;
-  if (array.length === 0 || array.length === 1) {
-    return (0);
+  if (!myArr || myArr.length === 1) {
+    return 0;
   } else {
-    array.sort((a, b) => b - a);
-    array.shift();
-    ans = array.shift();
-    return (ans);
+    let max = 0;
+    let max2 = 0;
+    for (let i = 0; myArr[i + 1]; i++) {
+      if (myArr[i + 1] > myArr[i]) {
+        max = myArr[i + 1];
+        max2 = myArr[i];
+        if (myArr[i + 1] > max2 && myArr[i + 1] !== max) {
+          max2 = myArr[i + 1];
+        }
+      }
+    }
+    return max2;
   }
 }
 const ans = secondBiggest(myArr);
