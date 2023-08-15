@@ -6,7 +6,7 @@ function secondBiggest (array) {
     return 0;
   } else {
     myArr.sort((a, b) => a - b);
-    return (myArr[myArr.length - 2])
+    return (myArr[myArr.length - 2]);
   }
 }
 
