@@ -8,7 +8,7 @@ class Square extends Square1 {
       for (let i = 0; i < this.height; i++) {
         let output = '';
         for (let j = 0; j < this.width; j++) {
-          output += 'C';
+          output += c;
         }
         console.log(output);
       }
