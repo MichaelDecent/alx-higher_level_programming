@@ -18,7 +18,7 @@ if __name__ == '__main__':
             db=argv[3]
             )
     cur = db_connect.cursor()
-    query = f"SELECT * FROM states WHERE name = '{argv[4]}' ORDER BY id ASC"
+    query = ("SELECT * FROM states WHERE name = '{:s}' ORDER BY id ASC".format(argv[4]))
     cur.execute(query)
 
     states_data = cur.fetchall()

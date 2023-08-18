@@ -2,7 +2,6 @@
 """
 This Module conatins a script that lists
 all cities from the database hbtn_0e_4_usa
-
 """
 import MySQLdb
 from sys import argv
@@ -27,8 +26,7 @@ if __name__ == '__main__':
 
     cities_data = cur.fetchall()
     for data in cities_data:
-        if argv[4] in data:
-            print(data)
+        print(data)
 
     cur.close()
     db_connect.close()
