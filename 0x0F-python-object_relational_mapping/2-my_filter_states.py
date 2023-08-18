@@ -18,12 +18,15 @@ if __name__ == '__main__':
             db=argv[3]
             )
     cur = db_connect.cursor()
-    query = ("SELECT * FROM states WHERE name = '{:s}' ORDER BY id ASC".format(argv[4]))
+    query = ("""SELECT * FROM states
+             WHERE name = '{:s}'
+             ORDER BY id ASC""".format(argv[4]))
     cur.execute(query)
 
     states_data = cur.fetchall()
     for data in states_data:
-        print(data)
+        if argv[4] in data:
+            print(data)
 
     cur.close()
     db_connect.close()
