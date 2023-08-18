@@ -18,12 +18,13 @@ if __name__ == '__main__':
             db=argv[3]
             )
     cur = db_connect.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
     cur.execute(query)
 
     states_data = cur.fetchall()
     for data in states_data:
-        print(data)
+        if data[1][0] == 'N':
+            print(data)
 
     cur.close()
     db_connect.close()

@@ -26,7 +26,8 @@ if __name__ == '__main__':
 
     cities_data = cur.fetchall()
     for data in cities_data:
-        print(data)
+        if argv[4] in data:
+            print(data)
 
     cur.close()
     db_connect.close()
