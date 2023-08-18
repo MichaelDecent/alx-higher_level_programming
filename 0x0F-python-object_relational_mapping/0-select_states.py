@@ -15,13 +15,13 @@ if __name__ == '__main__':
             db=argv[3]
             )
 
-    cu = db_connect.cursor()
+    cur = db_connect.cursor()
     query = "SELECT * FROM states ORDER BY id ASC"
-    cu.execute(query)
+    cur.execute(query)
 
-    states_data = cu.fetchall()
+    states_data = cur.fetchall()
     for row in states_data:
         print(row)
 
-    cu.close()
+    cur.close()
     db_connect.close()

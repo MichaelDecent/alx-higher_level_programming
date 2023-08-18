@@ -24,8 +24,8 @@ if __name__ == '__main__':
     ORDER BY cities.id"""
     cur.execute(query)
 
-    states_data = cur.fetchall()
-    for data in states_data:
+    cities_data = cur.fetchall()
+    for data in cities_data:
         print(data)
 
     cur.close()
