@@ -17,7 +17,12 @@ if __name__ == '__main__':
 
     # create and connects with the datatbase
     engine = create_engine(
+<<<<<<< HEAD
         f"mysql+mysqldb://{user}:{pwd}@localhost/{db}")
+=======
+        f"mysql+mysqldb://{user}:{pwd}@localhost/{db}",
+        pool_pre_ping=True)
+>>>>>>> e8e86ff29e51ebe8ea09c0cdb334fa6d917d5573
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
