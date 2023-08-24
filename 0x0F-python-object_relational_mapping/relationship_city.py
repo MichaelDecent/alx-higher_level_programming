@@ -4,7 +4,7 @@ This Module contains a script that creates
 a table 'City' in database 'hbtn_0e_14_usa'
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import State, Base
+from relationship_state import State, Base
 
 
 class City(Base):
