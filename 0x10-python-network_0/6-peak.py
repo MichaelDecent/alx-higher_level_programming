@@ -11,15 +11,17 @@ def find_peak(list_of_integers):
         Args:
             list_of_integers(list)
     """
-    if len(list_of_integers) == 0:
+    no_list = len(list_of_integers)
+    if no_list == 0 or type(list_of_integers) != list:
         return None
-    peak = None
-    if len(list_of_integers) > 2:
-        for idx in range(len(list_of_integers) - 2):
-            val = list_of_integers[idx + 1]
-            if (val >= list_of_integers[idx] and val >=
-                    list_of_integers[idx + 2]):
-                peak = val
-        return peak
-    else:
+    
+    if no_list < 3:
         return max(list_of_integers)
+    else:
+        mid = no_list // 2
+        if list_of_integers[mid] < list_of_integers[mid - 1]:
+            return find_peak(list_of_integers[:mid])
+        if list_of_integers[mid] < list_of_integers[mid + 1]:
+            return find_peak(list_of_integers[mid:])
+
+    return list_of_integers[mid]
