@@ -14,7 +14,10 @@ def find_peak(list_of_integers):
     no_list = len(list_of_integers)
     if no_list == 0 or type(list_of_integers) != list:
         return None
-    
+
+    if not all(type(n) == int for n in list_of_integers):
+        raise TypeError("list_of_integer must be a list of integers")
+
     if no_list < 3:
         return max(list_of_integers)
     else:
