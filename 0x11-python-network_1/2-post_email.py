@@ -7,7 +7,7 @@
 from sys import argv
 from urllib.parse import urlencode
 from urllib.request import urlopen, Request
-from urllib.error import HTTPError
+
 
 url = argv[1]
 email = argv[2]
@@ -15,11 +15,8 @@ values = {'email': email}
 data = urlencode(values)
 data = data.encode('ascii')
 request = Request(url, data)
-try:
-    with urlopen(request) as response:
-        web_page = response.read().decode('utf-8')
-except HTTPError as e:
-    print('The server couldn\'t fulfill the request.')
-    print('Error code: ', e.code)
+
+with urlopen(request) as response:
+    web_page = response.read().decode('utf-8')
 
 print(web_page)
