@@ -10,6 +10,5 @@ if __name__ == "__main__":
 
     response = requests.get(url)
 
-    print(f"""Body response:
-    \t- type: {type(response.text)}
-    \t- content: {response.text}""")
+    print("Body response:")
+    print(f"\t- type: {type(response.text)}\n\t- content: {response.text}")
