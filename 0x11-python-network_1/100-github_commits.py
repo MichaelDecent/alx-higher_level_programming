@@ -21,8 +21,8 @@ if __name__ == "__main__":
             if isinstance(data_array, list):
                 count = 0
                 for data in data_array:
-                    print(f"{data.get('sha')}: \
-                    {data.get('commit')['author']['name']}")
+                    print(f"{data.get('sha')}:\
+ {data.get('commit')['author']['name']}")
                     count += 1
                     if count == 10:
                         break
