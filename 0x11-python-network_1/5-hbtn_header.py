@@ -6,10 +6,11 @@ in the response header
 """
 from sys import argv
 import requests
+if __name__ == "__main__":
 
-url = argv[1]
+    url = argv[1]
 
-response = requests.get(url)
-X_Request_Id = response.headers['X-Request-Id']
+    response = requests.get(url)
+    X_Request_Id = response.headers['X-Request-Id']
 
-print(X_Request_Id)
+    print(X_Request_Id)

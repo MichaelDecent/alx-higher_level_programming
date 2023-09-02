@@ -7,10 +7,13 @@ from sys import argv
 from urllib.request import urlopen
 from urllib.error import HTTPError
 
-url = argv[1]
-try:
-    with urlopen(url) as response:
-        web_page = response.read().decode('utf-8')
-        print(web_page)
-except HTTPError as e:
-    print('Error code: ', e.code)
+
+if __name__ == "__main__":
+
+    url = argv[1]
+    try:
+        with urlopen(url) as response:
+            web_page = response.read().decode('utf-8')
+            print(web_page)
+    except HTTPError as e:
+        print('Error code: ', e.code)
