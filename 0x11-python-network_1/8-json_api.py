@@ -8,14 +8,21 @@ import requests
 
 
 if __name__ == "__main__":
-    url = argv[1]
-    if not argv[2]:
-        q = ""
+
+    url = 'http://0.0.0.0:5000/search_user'
+
+    if len(argv) > 1:
+        data = {'q': argv[1]}
     else:
-        q = argv[2]
+        data = {'q': ""}
 
-    params = {'q': q}
+    response = requests.post(url, data=data)
 
-    response = requests.post(url, params=params)
-    if not response.json():
-        response.
+    try:
+        json_file = response.json()
+        if json_file:
+            print(f"[{json_file['id']}] {json_file['name']}")
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
