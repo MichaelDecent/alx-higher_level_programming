@@ -1,23 +1,30 @@
 #!/usr/bin/python3
 """
- a Python script that takes 2 arguments in order to solve this challenge
+A Python script that takes 2 arguments to list 10 most recent commits of a repository.
 """
 from sys import argv
 import requests
 
 if __name__ == "__main__":
-    repo = argv[1]
-    owner = argv[2]
-    url = f'https://api.github.com/repos/{owner}/{repo}/commits'
-    params = {'since': '2023-09-01T12:50:00Z'}
+    if len(argv) != 3:
+        print("Usage: ./script_name.py <repository_name> <owner_username>")
+    else:
+        repo = argv[1]
+        owner = argv[2]
+        url = f'https://api.github.com/repos/{owner}/{repo}/commits'
 
-    response = requests.get(url, params=params)
+        response = requests.get(url)
 
-    data_array = response.json()
-    if isinstance(data_array, list):
-        count = 0
-        for data in data_array:
-            print(f"{data.get('sha')}: {data.get('commit')['author']['name']}")
-            count += 1
-            if count == 10:
-                break
+        if response.status_code == 200:
+            data_array = response.json()
+            if isinstance(data_array, list):
+                count = 0
+                for data in data_array:
+                    print(f"{data.get('sha')}: {data.get('commit')['author']['name']}")
+                    count += 1
+                    if count == 10:
+                        break
+            else:
+                print("Response does not contain a list of commits.")
+        else:
+            print(f"Request failed with status code {response.status_code}")
