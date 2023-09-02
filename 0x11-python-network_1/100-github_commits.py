@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A Python script that takes 2 arguments to list 10 most recent commits of a repository.
+A Python script that takes 2 arguments to list 10
+most recent commits of a repository.
 """
 from sys import argv
 import requests
@@ -20,7 +21,8 @@ if __name__ == "__main__":
             if isinstance(data_array, list):
                 count = 0
                 for data in data_array:
-                    print(f"{data.get('sha')}: {data.get('commit')['author']['name']}")
+                    print(f"{data.get('sha')}: \
+                    {data.get('commit')['author']['name']}")
                     count += 1
                     if count == 10:
                         break
