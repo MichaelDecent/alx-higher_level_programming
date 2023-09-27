@@ -11,7 +11,7 @@ request.get(url, (error, response, body) => {
     const data = JSON.parse(body);
     for (const value of data.results) {
       for (const element of value.characters) {
-        if (element === 'https://swapi-api.alx-tools.com/api/people/18/') {
+        if (element.includes('18')) {
           count++;
         }
       }
