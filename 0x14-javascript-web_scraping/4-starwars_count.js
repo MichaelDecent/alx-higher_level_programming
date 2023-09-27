@@ -12,7 +12,7 @@ request.get(url, (error, response, body) => {
     for (const value of data.results) {
       for (const element of value.characters) {
         if (element === 'https://swapi-api.alx-tools.com/api/people/18/') {
-          count += 1;
+          count++;
         }
       }
     }
